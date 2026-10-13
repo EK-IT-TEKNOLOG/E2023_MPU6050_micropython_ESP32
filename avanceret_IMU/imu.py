@@ -161,8 +161,8 @@ class MPU6050(object):
         except OSError:
             raise MPUException(self._I2Cerror)
         chip_id = int(self.buf1[0])
-        #print("Chip id is: ",chip_id, "\n self._chip_id is: ",self._chip_id)
-        if chip_id != self._chip_id:
+        print("Chip id is: ",chip_id, "\n self._chip_id is: ",self._chip_id)
+        if chip_id != self._chip_id and chip_id != 114:
             raise ValueError('Bad chip ID retrieved: MPU communication failure')
         return chip_id
 
